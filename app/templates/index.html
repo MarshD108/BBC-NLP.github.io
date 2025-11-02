@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>CV Intelligence: Phân tích CV thông minh</title>
+		<link rel="stylesheet" href="/static/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<h1>🎯 Phân tích CV & Gợi ý ứng viên thông minh</h1>
+			<p class="intro">Hệ thống sử dụng BERT để trích xuất thông tin từ CV và tìm kiếm ứng viên phù hợp dựa trên ngữ cảnh.</p>
+
+			<section class="panel">
+				<h2>1) Khởi tạo dữ liệu</h2>
+				<p>Tạo chỉ mục cho dataset CV. Mặc định từ thư mục <code>Dataset/data/data/</code></p>
+				<div class="row">
+					<input id="index-root" type="text" placeholder="🗂️ Đường dẫn tới thư mục dataset (tùy chọn)">
+					<button id="btn-index">📊 Xây dựng chỉ mục</button>
+				</div>
+				<div id="index-result" class="output"></div>
+			</section>
+
+			<section class="panel">
+				<h2>2) Trích xuất thông tin</h2>
+				<p>Trích xuất tên người, tổ chức, địa điểm và thông tin quan trọng khác từ CV.</p>
+				<div class="row">
+					<div class="file-upload">
+						<input id="file-extract" type="file" accept="application/pdf">
+						<button id="btn-extract-file">📄 Phân tích từ PDF</button>
+					</div>
+				</div>
+				<textarea id="text-extract" placeholder="Hoặc dán nội dung CV vào đây để phân tích..."></textarea>
+				<div class="row">
+					<button id="btn-extract-text">🔍 Phân tích văn bản</button>
+				</div>
+				<div id="extract-result" class="output"></div>
+			</section>
+
+			<section class="panel">
+				<h2>3) Tìm ứng viên phù hợp</h2>
+				<p>Tìm CV tương tự dựa trên mô tả công việc hoặc CV mẫu.</p>
+				<div class="row">
+					<div class="file-upload">
+						<input id="file-reco" type="file" accept="application/pdf">
+						<div class="input-group">
+							<label for="topk">Số lượng:</label>
+							<input id="topk" type="number" min="1" max="50" value="5">
+						</div>
+						<button id="btn-reco-file">🎯 Tìm từ PDF</button>
+					</div>
+				</div>
+				<textarea id="text-reco" placeholder="Hoặc dán mô tả công việc/CV mẫu vào đây..."></textarea>
+				<div class="row">
+					<button id="btn-reco-text">🔎 Tìm từ văn bản</button>
+				</div>
+				<div id="reco-result" class="output"></div>
+			</section>
+		</div>
+
+		<script src="/static/app.js"></script>
+	</body>
+</html>
