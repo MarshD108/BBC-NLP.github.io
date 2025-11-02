@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CV Intelligence (BERT NER + Candidate Recommendation)
 
 Ứng dụng web Flask trích xuất thực thể từ CV tiếng Anh bằng BERT NER và gợi ý ứng viên phù hợp cho doanh nghiệp bằng Sentence-BERT.
@@ -49,3 +50,6 @@ Invoke-RestMethod -Method Post -Uri http://localhost:5000/api/index -ContentType
 ## Bảo trì
 - Nếu thay đổi DATASET, chạy lại "Xây dựng chỉ mục".
 - Có thể đổi model qua ENV `NER_MODEL`, `SENTENCE_MODEL`.
+=======
+# BBC-NLP.github.io
+>>>>>>> e8cb2bcd306a2c7f8685cdd03f46b52cefb3a6bd
